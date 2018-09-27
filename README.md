@@ -8,10 +8,15 @@ https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessi
 
 # Setup
 
+Generate key and cert 
+
 openssl req -newkey rsa:2048 -keyout key.pem -x509 -days 365 -out ./ssl/certificate.pem
-
 openssl x509 -text -noout -in ./ssl/certificate.pem
-
 openssl pkcs12 -inkey key.pem -in ./ssl/certificate.pem -export -out ./ssl/certificate.p12
-
 openssl pkcs12 -in ./ssl/certificate.p12 -noout -info  // verify certificate
+
+Run
+node sever.js
+
+![screen](https://raw.githubusercontent.com/dicksonyue/aws-alb-cookie-manipulation/master/Screen%20Shot%202018-09-27%20at%201.42.10%20PM.png)
+
