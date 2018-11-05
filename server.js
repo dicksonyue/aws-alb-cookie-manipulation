@@ -13,10 +13,12 @@ https.createServer(options, (req, res) => {
   
   var cks = new cookies(req, res, { keys: keys });
   var ckawsalb = cks.get('AWSALB');
-  console.log(ckawsalb);
+  console.log("ckawsalb:" + ckawsalb);
   if(ckawsalb){
 	// Set the cookie to a value
-  	cks.set('AWSALB', ckawsalb, {secure: true })
+	// set a 5 mins sticky cookie
+	console.log(Date.now())
+  	cks.set('AWSALB', ckawsalb, {secure: true, expires: new Date(new Date().getTime()+300000)})
   }
   res.writeHead(200);
   res.end('hello world\n');
