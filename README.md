@@ -1,4 +1,4 @@
-# AWSALB Cookie manipulation 
+# AWSALB Cookie "secure flag" manipulation 
 By default the "secure flag" of the AWSALB cookie is not on. It might violate some of the security compliance policy like PCI.
 
 Here is the work around by using the application controlled stickiness cookie to manipulate the secure flag
